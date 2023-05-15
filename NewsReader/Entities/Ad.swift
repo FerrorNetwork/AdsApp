@@ -1,32 +1,33 @@
 import Foundation
 import Fakery
+import RxDataSources
 
 let faker = Faker(locale: "ru")
 
 struct Ad: Decodable {
-    struct Rating: Decodable {
-        let rate: Double
-        let count: Int
-        
-        static var placeholder: Rating {
-            Rating(rate: faker.number.randomDouble(), count: faker.number.randomInt())
-        }
-    }
-    
     let id: Int
     let title: String
-    let price: Double
-    let description, category: String
+    let price: Int
+    let description: String
+    let category: Category
+    let images: [String]
+}
+
+// MARK: - Category
+struct Category: Codable {
+    let id: Int
+    let name: String
     let image: String
-    let rating: Rating
+}
+
+
+
+extension Ad: IdentifiableType, Equatable {
+    static func == (lhs: Ad, rhs: Ad) -> Bool {
+        lhs.title == rhs.title
+    }
     
-    static var placeholder: Ad {
-        Ad(id: faker.number.randomInt(),
-           title: faker.lorem.word(),
-           price: faker.number.randomDouble(min: 0.0, max: 10.0),
-           description: faker.lorem.words(amount: 6),
-           category: faker.lorem.word(),
-           image: faker.internet.image(),
-           rating: Rating.placeholder)
+    var identity: String {
+        title
     }
 }

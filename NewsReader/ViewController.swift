@@ -12,6 +12,7 @@ final class ViewController: UIViewController {
         let service = AdsService()
         let viewModel = AdsViewModel(service: service)
         let viewController = AdsListViewController(viewModel: viewModel)
+        viewController.modalPresentationStyle = .fullScreen
         present(viewController, animated: false)
     }
 

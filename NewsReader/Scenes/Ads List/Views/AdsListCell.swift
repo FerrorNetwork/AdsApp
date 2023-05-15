@@ -11,7 +11,7 @@ final class AdsListCell: UITableViewCell {
     ) {
         titleLabel.text = viewModel.title
         descriptionLabel.text = viewModel.description
-        categoryLabel.text = "\(viewModel.rating)"
+        categoryLabel.text = viewModel.category.name
     }
     
 }

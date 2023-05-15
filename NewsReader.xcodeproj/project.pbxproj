@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		183DDA922A121D3E00BDA504 /* ActivityIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 183DDA912A121D3E00BDA504 /* ActivityIndicator.swift */; };
 		F4E35D3629771B5F00D4D3E5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4E35D3529771B5F00D4D3E5 /* AppDelegate.swift */; };
 		F4E35D3829771B5F00D4D3E5 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4E35D3729771B5F00D4D3E5 /* SceneDelegate.swift */; };
 		F4E35D3A29771B5F00D4D3E5 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4E35D3929771B5F00D4D3E5 /* ViewController.swift */; };
@@ -29,6 +30,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		183DDA912A121D3E00BDA504 /* ActivityIndicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityIndicator.swift; sourceTree = "<group>"; };
 		F4E35D3229771B5F00D4D3E5 /* NewsReader.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NewsReader.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F4E35D3529771B5F00D4D3E5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F4E35D3729771B5F00D4D3E5 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -63,6 +65,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		183DDA8F2A121CDA00BDA504 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				183DDA902A121CED00BDA504 /* ActivityIndicatorCell */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		183DDA902A121CED00BDA504 /* ActivityIndicatorCell */ = {
+			isa = PBXGroup;
+			children = (
+				183DDA912A121D3E00BDA504 /* ActivityIndicator.swift */,
+			);
+			path = ActivityIndicatorCell;
+			sourceTree = "<group>";
+		};
 		F4E35D2929771B5F00D4D3E5 = {
 			isa = PBXGroup;
 			children = (
@@ -90,6 +108,7 @@
 				F4E35D4B29771BB400D4D3E5 /* Extensions */,
 				F4E35D4A29771BA600D4D3E5 /* Scenes */,
 				F4E35D4929771B9300D4D3E5 /* Services */,
+				183DDA8F2A121CDA00BDA504 /* Views */,
 				F4E35D4D29771BC100D4D3E5 /* Resources */,
 				F4E35D4329771B6000D4D3E5 /* Info.plist */,
 			);
@@ -99,7 +118,7 @@
 		F4E35D4929771B9300D4D3E5 /* Services */ = {
 			isa = PBXGroup;
 			children = (
-				F4E35D5529771C6A00D4D3E5 /* News */,
+				F4E35D5529771C6A00D4D3E5 /* Ads */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -107,7 +126,7 @@
 		F4E35D4A29771BA600D4D3E5 /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
-				F4E35D5B29771E8500D4D3E5 /* Headlines View */,
+				F4E35D5B29771E8500D4D3E5 /* Ads List */,
 			);
 			path = Scenes;
 			sourceTree = "<group>";
@@ -136,12 +155,12 @@
 			path = Resources;
 			sourceTree = "<group>";
 		};
-		F4E35D5529771C6A00D4D3E5 /* News */ = {
+		F4E35D5529771C6A00D4D3E5 /* Ads */ = {
 			isa = PBXGroup;
 			children = (
 				F4E35D5629771C7500D4D3E5 /* AdsService.swift */,
 			);
-			path = News;
+			path = Ads;
 			sourceTree = "<group>";
 		};
 		F4E35D5829771CE200D4D3E5 /* Entities */ = {
@@ -152,7 +171,7 @@
 			path = Entities;
 			sourceTree = "<group>";
 		};
-		F4E35D5B29771E8500D4D3E5 /* Headlines View */ = {
+		F4E35D5B29771E8500D4D3E5 /* Ads List */ = {
 			isa = PBXGroup;
 			children = (
 				F4E35D622977216800D4D3E5 /* Views */,
@@ -160,7 +179,7 @@
 				F4E35D5C29771EA200D4D3E5 /* AdsListViewController.swift */,
 				F4E35D5E29771EBB00D4D3E5 /* AdsViewModel.swift */,
 			);
-			path = "Headlines View";
+			path = "Ads List";
 			sourceTree = "<group>";
 		};
 		F4E35D622977216800D4D3E5 /* Views */ = {
@@ -265,6 +284,7 @@
 				F4E35D5729771C7500D4D3E5 /* AdsService.swift in Sources */,
 				F4E35D5F29771EBB00D4D3E5 /* AdsViewModel.swift in Sources */,
 				F4E35D3829771B5F00D4D3E5 /* SceneDelegate.swift in Sources */,
+				183DDA922A121D3E00BDA504 /* ActivityIndicator.swift in Sources */,
 				F4E35D652977218200D4D3E5 /* AdsListCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

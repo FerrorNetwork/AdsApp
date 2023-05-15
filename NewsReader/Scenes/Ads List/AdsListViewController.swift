@@ -18,9 +18,17 @@ final class AdsListViewController: UIViewController {
     private var disposeBag = DisposeBag()
     
     private lazy var dataSource = RxTableViewSectionedAnimatedDataSource<AdsSection> { (dataSource, tableView: UITableView, indexPath, item) in
-        let cell = tableView.dequeueReusableCell(withIdentifier: Constants.adCell) as! AdsListCell
-        cell.configure(with: item)
-        return cell
+        switch item {
+        case .activityIndicator:
+            let activityIndicator = tableView.dequeueReusableCell(withIdentifier: ActivityIndicatorCell.id) as! ActivityIndicatorCell
+            activityIndicator.startAnimating()
+            return activityIndicator
+            
+        case .ad(let ad):
+            let cell = tableView.dequeueReusableCell(withIdentifier: Constants.adCell) as! AdsListCell
+            cell.configure(with: ad)
+            return cell
+        }
     }
     
     init(viewModel: ViewModel) {
@@ -48,6 +56,21 @@ private extension AdsListViewController {
     func configureTableView() {
         let nib = UINib(nibName: Constants.adCell, bundle: nil)
         tableView.register(nib, forCellReuseIdentifier: Constants.adCell)
+        tableView.register(ActivityIndicatorCell.self, forCellReuseIdentifier: ActivityIndicatorCell.id)
+        
+        tableView
+            .rx
+            .contentOffset
+            .map(\.y)
+            .filter { [unowned self] y in
+                let height = tableView.frame.size.height
+                let distanceFromBottom = tableView.contentSize.height - y
+                return distanceFromBottom < height
+            }
+            .throttle(.seconds(3), latest: true, scheduler: MainScheduler.instance)
+            .map { _ in }
+            .bind(to: viewModel.nextPageLoadingTrigger)
+            .disposed(by: disposeBag)
         
         tableView.rx
             .itemSelected
@@ -57,7 +80,7 @@ private extension AdsListViewController {
             .disposed(by: disposeBag)
         
         viewModel
-            .headlines
+            .ads
             .drive(
                 tableView.rx.items(dataSource: dataSource)
             )

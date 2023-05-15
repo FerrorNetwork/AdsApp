@@ -3,13 +3,16 @@ import RxSwift
 import Fakery
 
 protocol AdsServiceType {
-    func getTopHeadlines() -> Observable<[Ad]>
+    func getAds(
+        offset: Int,
+        limit: Int
+    ) -> Observable<[Ad]>
 }
 
 final class AdsService: AdsServiceType {
     
-    func getTopHeadlines() -> Observable<[Ad]> {
-        let request = URLRequest(url: URL(string: "https://fakestoreapi.com/products")!)
+    func getAds(offset: Int, limit: Int) -> Observable<[Ad]> {
+        let request = URLRequest(url: URL(string: "https://api.escuelajs.co/api/v1/products?offset=\(offset)&limit=\(limit)")!)
  
         return URLSession.shared
             .rx
