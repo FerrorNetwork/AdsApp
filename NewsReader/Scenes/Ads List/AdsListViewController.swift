@@ -17,7 +17,12 @@ final class AdsListViewController: UIViewController {
     
     private var disposeBag = DisposeBag()
     
-    private lazy var dataSource = RxTableViewSectionedAnimatedDataSource<AdsSection> { (dataSource, tableView: UITableView, indexPath, item) in
+    private lazy var dataSource = RxTableViewSectionedAnimatedDataSource<AdsSection>.init(
+        animationConfiguration:
+            AnimationConfiguration(insertAnimation: .fade,
+                                   reloadAnimation: .fade,
+                                   deleteAnimation: .fade))
+    {(dataSource, tableView: UITableView, indexPath, item) in
         switch item {
         case .activityIndicator:
             let activityIndicator = tableView.dequeueReusableCell(withIdentifier: ActivityIndicatorCell.id) as! ActivityIndicatorCell
@@ -58,6 +63,15 @@ private extension AdsListViewController {
         tableView.register(nib, forCellReuseIdentifier: Constants.adCell)
         tableView.register(ActivityIndicatorCell.self, forCellReuseIdentifier: ActivityIndicatorCell.id)
         
+        let refreshControl = UIRefreshControl()
+        refreshControl
+            .rx
+            .controlEvent(.valueChanged)
+            .bind(to: viewModel.reloadingTrigger)
+            .disposed(by: disposeBag)
+        
+        tableView.refreshControl = refreshControl
+        
         tableView
             .rx
             .contentOffset
@@ -81,6 +95,9 @@ private extension AdsListViewController {
         
         viewModel
             .ads
+            .do(onNext: { _ in
+                refreshControl.endRefreshing()
+            })
             .drive(
                 tableView.rx.items(dataSource: dataSource)
             )

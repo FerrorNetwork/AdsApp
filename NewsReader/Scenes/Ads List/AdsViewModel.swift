@@ -25,14 +25,16 @@ final class AdsViewModel {
         
         var identity: String {
             switch self {
-            case .activityIndicator: return "activityIndicator"
+            case .activityIndicator: return UUID().uuidString
             case .ad(let ad): return ad.identity
             }
         }
     }
     
+    
     let ads: Driver<[AdsSection]>
     let nextPageLoadingTrigger = PublishRelay<Void>()
+    let reloadingTrigger = PublishRelay<Void>()
     
     private let service: AdsServiceType
     
@@ -40,16 +42,33 @@ final class AdsViewModel {
         service: AdsServiceType
     ) {
         self.service = service
+        ads = AdsViewModel.createAdsLoader(service: service,
+                                           nextPageTrigger: nextPageLoadingTrigger.asObservable(),
+                                           reloadTrigger: reloadingTrigger.asObservable())
+    }
+    
+    
+    static func createAdsLoader(
+        service: AdsServiceType,
+        nextPageTrigger: Observable<Void>,
+        reloadTrigger: Observable<Void>
+    ) -> Driver<[AdsSection]> {
         var offset = 0
-        ads = nextPageLoadingTrigger
+        
+        return Observable
+            .merge(
+                nextPageTrigger.do(onNext: { _ in
+                    offset += 10
+                }),
+                reloadTrigger.do(onNext: { _ in
+                    offset = 0
+                })
+            )
             .startWith(())
             .flatMap {
                 service
                     .getAds(offset: offset, limit: 10)
             }
-            .do(onNext: { _ in
-                offset += 10
-            })
             .map { ads in
                 return [
                     AdsSection(
@@ -59,9 +78,15 @@ final class AdsViewModel {
                 ]
             }
             .asDriver(onErrorJustReturn: [])
-            .scan([], accumulator: +)
+            .scan([], accumulator: { old, new in
+                var data: [AdsSection] = []
+                if offset == 0 {
+                    data = new
+                } else {
+                    data = old.dropLast() + new
+                }
+                return data + [AdsSection(identity: UUID().uuidString, items: [.activityIndicator])]
+            })
             .startWith([AdsSection(identity: UUID().uuidString, items: [.activityIndicator])])
-            
     }
-    
 }

@@ -24,10 +24,10 @@ struct Category: Codable {
 
 extension Ad: IdentifiableType, Equatable {
     static func == (lhs: Ad, rhs: Ad) -> Bool {
-        lhs.title == rhs.title
+        lhs.id == rhs.id
     }
     
     var identity: String {
-        title
+        "\(id)"
     }
 }
