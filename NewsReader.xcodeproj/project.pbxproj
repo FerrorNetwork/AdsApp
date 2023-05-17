@@ -8,9 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		183DDA922A121D3E00BDA504 /* ActivityIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 183DDA912A121D3E00BDA504 /* ActivityIndicator.swift */; };
+		183DDA942A14C07A00BDA504 /* DependencyContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 183DDA932A14C07A00BDA504 /* DependencyContainer.swift */; };
 		F4E35D3629771B5F00D4D3E5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4E35D3529771B5F00D4D3E5 /* AppDelegate.swift */; };
 		F4E35D3829771B5F00D4D3E5 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4E35D3729771B5F00D4D3E5 /* SceneDelegate.swift */; };
-		F4E35D3A29771B5F00D4D3E5 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4E35D3929771B5F00D4D3E5 /* ViewController.swift */; };
 		F4E35D3D29771B5F00D4D3E5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F4E35D3B29771B5F00D4D3E5 /* Main.storyboard */; };
 		F4E35D3F29771B6000D4D3E5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F4E35D3E29771B6000D4D3E5 /* Assets.xcassets */; };
 		F4E35D4229771B6000D4D3E5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F4E35D4029771B6000D4D3E5 /* LaunchScreen.storyboard */; };
@@ -31,10 +31,10 @@
 
 /* Begin PBXFileReference section */
 		183DDA912A121D3E00BDA504 /* ActivityIndicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityIndicator.swift; sourceTree = "<group>"; };
+		183DDA932A14C07A00BDA504 /* DependencyContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DependencyContainer.swift; sourceTree = "<group>"; };
 		F4E35D3229771B5F00D4D3E5 /* NewsReader.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NewsReader.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F4E35D3529771B5F00D4D3E5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F4E35D3729771B5F00D4D3E5 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		F4E35D3929771B5F00D4D3E5 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		F4E35D3C29771B5F00D4D3E5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		F4E35D3E29771B6000D4D3E5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F4E35D4129771B6000D4D3E5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -102,7 +102,7 @@
 			children = (
 				F4E35D3529771B5F00D4D3E5 /* AppDelegate.swift */,
 				F4E35D3729771B5F00D4D3E5 /* SceneDelegate.swift */,
-				F4E35D3929771B5F00D4D3E5 /* ViewController.swift */,
+				183DDA932A14C07A00BDA504 /* DependencyContainer.swift */,
 				F4E35D5829771CE200D4D3E5 /* Entities */,
 				F4E35D4C29771BB700D4D3E5 /* Helpers */,
 				F4E35D4B29771BB400D4D3E5 /* Extensions */,
@@ -278,11 +278,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				F4E35D5A29771D7400D4D3E5 /* Ad.swift in Sources */,
-				F4E35D3A29771B5F00D4D3E5 /* ViewController.swift in Sources */,
 				F4E35D5D29771EA200D4D3E5 /* AdsListViewController.swift in Sources */,
 				F4E35D3629771B5F00D4D3E5 /* AppDelegate.swift in Sources */,
 				F4E35D5729771C7500D4D3E5 /* AdsService.swift in Sources */,
 				F4E35D5F29771EBB00D4D3E5 /* AdsViewModel.swift in Sources */,
+				183DDA942A14C07A00BDA504 /* DependencyContainer.swift in Sources */,
 				F4E35D3829771B5F00D4D3E5 /* SceneDelegate.swift in Sources */,
 				183DDA922A121D3E00BDA504 /* ActivityIndicator.swift in Sources */,
 				F4E35D652977218200D4D3E5 /* AdsListCell.swift in Sources */,
