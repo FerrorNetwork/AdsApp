@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="collection view cell content view" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="eg0-MN-h0M" customClass="AdsListCell" customModule="NewsReader" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="589" height="600"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="HEL-AH-4W6">
+                <rect key="frame" x="0.0" y="0.0" width="589" height="600"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QB3-nl-70S">
+                        <rect key="frame" x="0.0" y="0.0" width="589" height="600"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="GLu-py-kMj">
+                                <rect key="frame" x="0.0" y="0.0" width="589" height="600"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IRv-ID-uzW" customClass="LazyImageView" customModule="NukeUI">
+                                        <rect key="frame" x="0.0" y="0.0" width="589" height="200"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="200" id="k7J-o2-d5D"/>
+                                        </constraints>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gsY-yL-9kN">
+                                        <rect key="frame" x="0.0" y="216" width="589" height="384"/>
+                                        <subviews>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="Avu-By-dxn">
+                                                <rect key="frame" x="16" y="16" width="557" height="352"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="Fiat Egea 2021" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QDd-qQ-sPl">
+                                                        <rect key="frame" x="0.0" y="0.0" width="557" height="270.33333333333331"/>
+                                                        <fontDescription key="fontDescription" style="UICTFontTextStyleTitle3"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="350 000TL" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Plc-D3-ODN" userLabel="Price">
+                                                        <rect key="frame" x="0.0" y="278.33333333333331" width="557" height="24"/>
+                                                        <fontDescription key="fontDescription" style="UICTFontTextStyleTitle3"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Фатих, Стамбул" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TqI-OX-KR5" userLabel="Location">
+                                                        <rect key="frame" x="0.0" y="310.33333333333337" width="557" height="14.333333333333314"/>
+                                                        <fontDescription key="fontDescription" style="UICTFontTextStyleCaption1"/>
+                                                        <color key="textColor" systemColor="secondaryLabelColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="23 января 2023 г." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5JL-QC-TW3" userLabel="Date">
+                                                        <rect key="frame" x="0.0" y="332.66666666666663" width="557" height="19.333333333333314"/>
+                                                        <fontDescription key="fontDescription" style="UICTFontTextStyleCallout"/>
+                                                        <color key="textColor" systemColor="secondaryLabelColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                            </stackView>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstItem="Avu-By-dxn" firstAttribute="leading" secondItem="gsY-yL-9kN" secondAttribute="leading" constant="16" id="1s1-ZO-cBV"/>
+                                            <constraint firstItem="Avu-By-dxn" firstAttribute="top" secondItem="gsY-yL-9kN" secondAttribute="top" constant="16" id="GxD-hT-Mav"/>
+                                            <constraint firstAttribute="trailing" secondItem="Avu-By-dxn" secondAttribute="trailing" constant="16" id="c7e-97-bmm"/>
+                                            <constraint firstAttribute="bottom" secondItem="Avu-By-dxn" secondAttribute="bottom" constant="16" id="kpg-GO-7WS"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="GLu-py-kMj" secondAttribute="bottom" id="N5L-by-zbW"/>
+                            <constraint firstAttribute="trailing" secondItem="GLu-py-kMj" secondAttribute="trailing" id="gga-2N-Brn"/>
+                            <constraint firstItem="GLu-py-kMj" firstAttribute="top" secondItem="QB3-nl-70S" secondAttribute="top" id="k0K-ZX-ZoD"/>
+                            <constraint firstItem="GLu-py-kMj" firstAttribute="leading" secondItem="QB3-nl-70S" secondAttribute="leading" id="zoK-RV-w30"/>
+                        </constraints>
+                    </view>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="QB3-nl-70S" firstAttribute="leading" secondItem="HEL-AH-4W6" secondAttribute="leading" id="DOb-dV-6p9"/>
+                    <constraint firstAttribute="bottom" secondItem="QB3-nl-70S" secondAttribute="bottom" id="DXY-KY-Yjy"/>
+                    <constraint firstAttribute="trailing" secondItem="QB3-nl-70S" secondAttribute="trailing" id="alt-Jd-0HW"/>
+                    <constraint firstItem="QB3-nl-70S" firstAttribute="top" secondItem="HEL-AH-4W6" secondAttribute="top" id="gLv-Lc-y7t"/>
+                </constraints>
+            </collectionViewCellContentView>
+            <size key="customSize" width="589" height="600"/>
+            <connections>
+                <outlet property="containerView" destination="QB3-nl-70S" id="IGO-qD-8tf"/>
+                <outlet property="dateLabel" destination="5JL-QC-TW3" id="zLH-9Y-xpR"/>
+                <outlet property="imageView" destination="IRv-ID-uzW" id="M2Y-gV-9DL"/>
+                <outlet property="locationLabel" destination="TqI-OX-KR5" id="Zpr-K6-J9J"/>
+                <outlet property="priceLabel" destination="Plc-D3-ODN" id="Hkb-Sg-6zE"/>
+                <outlet property="titleLabel" destination="QDd-qQ-sPl" id="30T-wk-zcz"/>
+            </connections>
+            <point key="canvasLocation" x="52.671755725190835" y="258.45070422535213"/>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <systemColor name="secondaryLabelColor">
+            <color red="0.23529411764705882" green="0.23529411764705882" blue="0.2627450980392157" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
