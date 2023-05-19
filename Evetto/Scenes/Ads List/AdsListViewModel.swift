@@ -39,6 +39,8 @@ final class AdsListViewModel {
     private let service: AdsServiceType
     private let routeTrigger: AdsRouteTrigger
     
+    
+    
     init(
         service: AdsServiceType = appContext.adsService,
         routeTrigger: @escaping AdsRouteTrigger
@@ -63,12 +65,11 @@ final class AdsListViewModel {
     ) -> Driver<[AdsSection]> {
         var page = 0
         
-        let dateFormatter = DateFormatter()
-        dateFormatter.setLocalizedDateFormatFromTemplate("dd MMMM y, HH:mm")
         
-        let numberFormatter = NumberFormatter()
-        numberFormatter.minimumFractionDigits = 0
-        numberFormatter.maximumFractionDigits = 2
+        let numberFormmatter = NumberFormatter.priceNumberForrmatter
+        let dateForrmatter = DateFormatter.dateFormat
+        
+        
         
         return Observable
             .merge(
@@ -86,8 +87,8 @@ final class AdsListViewModel {
                         items: ads.map { ad in
                             AdListItem.ad(AdsListItemViewModel(
                                 ad: ad,
-                                formatDate: dateFormatter.string,
-                                formatPrice: numberFormatter.string
+                                formatDate: dateForrmatter.string,
+                                priceFormatter: numberFormmatter
                             ))
                         }
                     )

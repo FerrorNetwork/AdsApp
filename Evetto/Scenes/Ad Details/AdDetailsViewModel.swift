@@ -9,12 +9,15 @@ final class AdDetailsViewModel: ObservableObject {
     @Published var location: String?
     @Published var price = ""
     @Published var category = ""
+    @Published var date = ""
     @Published var numberOfViews = ""
     @Published var descriptionText: String?
     @Published var sellerName = ""
     @Published var contacts: [Contact] = []
     
     private var disposeBag = DisposeBag()
+    private let priceNumberFormatter = NumberFormatter.priceNumberForrmatter
+    private let dateForrmatter = DateFormatter.dateFormat
     
     init(
         adDetails: Single<Ad>
@@ -41,8 +44,15 @@ final class AdDetailsViewModel: ObservableObject {
         title = ad.title
         descriptionText = ad.description
         location = ad.location?.area ?? ""
-        price = ad.price?.amount.description ?? ""
+        if let price = ad.price {
+            priceNumberFormatter.currencyCode = price.currency.rawValue
+            priceNumberFormatter.currencySymbol = price.currency.currencySymbol
+            self.price = priceNumberFormatter.string(for: price.amount) ?? "\(price.amount)"
+        } else {
+            price = "Цена не указана"
+        }
         category = ad.category?.title ?? ""
+        date = dateForrmatter.string(from: ad.createdAt)
         didLoadData = ad.isPlaceholder != true
     }
     

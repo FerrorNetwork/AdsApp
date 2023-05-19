@@ -10,32 +10,22 @@ struct AdDetailsView: View {
             content
                 .redacted(reason: viewModel.didLoadData ? [] : .placeholder)
         }
+        .navigationTitle(viewModel.title)
+
     }
     
     private var content: some View {
-        Group {
+        VStack {
             images
-            
-            HStack(alignment: .top) {
-                VStack(alignment: .leading) {
-                    Text(viewModel.title)
-                        .font(.title2)
-                    
-                    if let location = viewModel.location {
-                        Text(location)
-                            .foregroundColor(Color.secondary)
-                    }
-                }
-                
-                Spacer()
-                
-                Text(viewModel.price)
-                    .foregroundColor(Color.white)
-                    .padding(6)
-                    .background(Color.blue)
-                    .clipShape(Capsule())
+            titleAndPrice
+            Divider()
+            categoryAndDate
+            if let text = viewModel.descriptionText {
+                descriptionText(text)
             }
-            .padding()
+            Button("Связаться", action: {})
+                .buttonStyle(.primaryAction)
+                .padding(.horizontal)
         }
     }
     
@@ -71,10 +61,51 @@ struct AdDetailsView: View {
             }
         }
         .tabViewStyle(.page)
-        .frame(height: 200)
+        .frame(height: 400)
         .frame(maxWidth: .infinity)
     }
     
+    private var titleAndPrice: some View {
+        HStack(alignment: .top) {
+            VStack(alignment: .leading) {
+                Text(viewModel.title)
+                    .font(.title2)
+                
+                if let location = viewModel.location {
+                    Text(location)
+                        .foregroundColor(Color.secondary)
+                }
+            }
+            
+            Spacer()
+            
+            Text(viewModel.price)
+                .foregroundColor(Color.white)
+                .padding(6)
+                .background(Color.blue)
+                .clipShape(Capsule())
+        }
+        .padding()
+    }
+    
+    private var categoryAndDate: some View {
+        HStack {
+            Text(viewModel.category)
+                .font(.subheadline)
+                .foregroundColor(.accentColor)
+            Spacer()
+            Text(viewModel.date)
+                .font(.footnote)
+                .foregroundColor(.secondary)
+        }
+        .padding()
+    }
+    
+    private func descriptionText(_ text: String) -> some View {
+        Text(text)
+            .frame(maxWidth: .infinity, alignment: .leading)
+            .padding()
+    }
 }
 
 struct AdDetailsView_Previews: PreviewProvider {

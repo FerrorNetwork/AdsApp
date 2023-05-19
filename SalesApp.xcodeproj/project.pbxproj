@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		188EC4DB2A1745BC00914BEE /* NumberForrmatter+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 188EC4DA2A1745BC00914BEE /* NumberForrmatter+.swift */; };
+		188EC4DD2A17529000914BEE /* DateForrmatter+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 188EC4DC2A17529000914BEE /* DateForrmatter+.swift */; };
+		188EC4E02A175CFF00914BEE /* PrimatyButtonModify.swift in Sources */ = {isa = PBXBuildFile; fileRef = 188EC4DF2A175CFF00914BEE /* PrimatyButtonModify.swift */; };
 		F4B200E92982EE9D00028D1B /* AdDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4B200E82982EE9D00028D1B /* AdDetailsViewController.swift */; };
 		F4B200EB2982EEA700028D1B /* AdDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4B200EA2982EEA700028D1B /* AdDetailsView.swift */; };
 		F4B200ED2982EEAE00028D1B /* AdDetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4B200EC2982EEAE00028D1B /* AdDetailsViewModel.swift */; };
@@ -42,6 +45,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		188EC4DA2A1745BC00914BEE /* NumberForrmatter+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NumberForrmatter+.swift"; sourceTree = "<group>"; };
+		188EC4DC2A17529000914BEE /* DateForrmatter+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DateForrmatter+.swift"; sourceTree = "<group>"; };
+		188EC4DF2A175CFF00914BEE /* PrimatyButtonModify.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrimatyButtonModify.swift; sourceTree = "<group>"; };
 		F4B200E82982EE9D00028D1B /* AdDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdDetailsViewController.swift; sourceTree = "<group>"; };
 		F4B200EA2982EEA700028D1B /* AdDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdDetailsView.swift; sourceTree = "<group>"; };
 		F4B200EC2982EEAE00028D1B /* AdDetailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdDetailsViewModel.swift; sourceTree = "<group>"; };
@@ -90,6 +96,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		188EC4D92A17459A00914BEE /* Foundation */ = {
+			isa = PBXGroup;
+			children = (
+				188EC4DA2A1745BC00914BEE /* NumberForrmatter+.swift */,
+				188EC4DC2A17529000914BEE /* DateForrmatter+.swift */,
+			);
+			path = Foundation;
+			sourceTree = "<group>";
+		};
+		188EC4DE2A175CDD00914BEE /* SwiftUi Primary Modifiers */ = {
+			isa = PBXGroup;
+			children = (
+				188EC4DF2A175CFF00914BEE /* PrimatyButtonModify.swift */,
+			);
+			path = "SwiftUi Primary Modifiers";
+			sourceTree = "<group>";
+		};
 		F4B200E62982EE6C00028D1B /* Ad Details */ = {
 			isa = PBXGroup;
 			children = (
@@ -111,6 +134,7 @@
 		F4E00F972979B931003F5E07 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				188EC4DE2A175CDD00914BEE /* SwiftUi Primary Modifiers */,
 				F4E00F982979B937003F5E07 /* ActivityIndicatorCell */,
 			);
 			path = Views;
@@ -188,6 +212,7 @@
 		F4E35D4B29771BB400D4D3E5 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				188EC4D92A17459A00914BEE /* Foundation */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -332,12 +357,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				188EC4E02A175CFF00914BEE /* PrimatyButtonModify.swift in Sources */,
+				188EC4DB2A1745BC00914BEE /* NumberForrmatter+.swift in Sources */,
 				F4B200EB2982EEA700028D1B /* AdDetailsView.swift in Sources */,
 				F4E35D5A29771D7400D4D3E5 /* Ad.swift in Sources */,
 				F4E35D5D29771EA200D4D3E5 /* AdsListViewController.swift in Sources */,
 				F4E35D3629771B5F00D4D3E5 /* AppDelegate.swift in Sources */,
 				F4B200F32982F51600028D1B /* Currency.swift in Sources */,
 				F4E00F9A2979B943003F5E07 /* ActivityIndicatorCell.swift in Sources */,
+				188EC4DD2A17529000914BEE /* DateForrmatter+.swift in Sources */,
 				F4E2D2B7298069BC00F992AC /* AdsListItemViewModel.swift in Sources */,
 				F4B200FC2982FFBF00028D1B /* MainCoordinator.swift in Sources */,
 				F4B200F62982FC2100028D1B /* AdsCoordinator.swift in Sources */,
